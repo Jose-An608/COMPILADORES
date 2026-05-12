@@ -40,19 +40,35 @@
       know about them.  */
    enum yytokentype {
      NUM = 258,
-     MAS = 259,
-     MENOS = 260,
-     MULT = 261,
-     DIV = 262,
-     PARI = 263,
-     PARD = 264
+     VAR = 259,
+     MAS = 260,
+     MENOS = 261,
+     MULT = 262,
+     DIV = 263,
+     MOD = 264,
+     IGUAL = 265,
+     PARI = 266,
+     PARD = 267
    };
 #endif
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+typedef union YYSTYPE
+{
+
+/* Line 1676 of yacc.c  */
+#line 39 "parser.y"
+
+    double dval;
+    char *sval;
+
+
+
+/* Line 1676 of yacc.c  */
+#line 71 "parser.tab.h"
+} YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
